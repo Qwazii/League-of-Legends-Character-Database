@@ -42,25 +42,89 @@ void input() {
         x++;
       }
       case 1: {
-        std::cout << "Role (Assassin, Fighter, Mage, Marksman, Support, Tank): ";
-        std::string Input;
-        std::cin >> Input;
-        Legend += " " + Input;
+        int i;
+        std::cout << "Role ( 0: Assassin, 1: Fighter, 2: Mage, 3: Marksman, 4: Support, 5: Tank): ";
+        std::cin >> i; 
+       switch(i) {
+           case 0: {
+            std::string Input = "Assassin";
+            Legend += " " + Input;
+            break;
+           }
+           case 1: {
+            std::string Input = "Fighter";
+            Legend += " " + Input;
+            break;
+           }
+           case 2: {
+            std::string Input = "Mage";
+            Legend += " " + Input;
+            break;
+           }
+           case 3: {
+            std::string Input = "Marksman";
+            Legend += " " + Input;
+            break;
+           }
+           case 4: {
+            std::string Input = "Support";
+            Legend += " " + Input;
+            break;
+           }
+           case 5: {
+            std::string Input = "Tank";
+            Legend += " " + Input;
+            break;
+           }
+
+       }
         x++;
       }
       case 2: {
-        std::cout << "Damage Type (AD, AP): ";
-        std::string Input;
-        std::cin >> Input;
-        Legend += " " + Input;
+        int i;
+        std::cout << "Damage Type (0: AD, 1: AP): ";
+        std::cin >> i;
+        switch(i) {
+           case 0: {
+            std::string Input = "AD";
+            Legend += " " + Input;
+            break;
+           }
+           case 1: {
+            std::string Input = "AP";
+            Legend += " " + Input;
+            break;
+           }
         x++;
       }
+      }
       case 3: {
-        std::cout<<"Lane (Top, Jungle, Mid, Bot): ";
-        std::string Input;
-        std::cin >> Input;
-        Legend += " " + Input;
+        int i;
+        std::cout<<"Lane (0: Top, 1: Jungle, 2: Mid, 3: Bot): ";
+        std::cin >> i;
+         switch(i) {
+           case 0: {
+            std::string Input = "Top";
+            Legend += " " + Input;
+            break;
+           }
+           case 1: {
+            std::string Input = "Jungle";
+            Legend += " " + Input;
+            break;
+           }
+           case 2: {
+            std::string Input = "Mid";
+            Legend += " " + Input;
+            break;
+           }
+           case 3: {
+            std::string Input = "Bot";
+            Legend += " " + Input;
+            break;
+           }
         x++;
+      }
       }
       case 4: {
         std::cout << Legend << std::endl;

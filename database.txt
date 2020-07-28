@@ -1,3 +1,6 @@
 Aatrox Fighter AD Top
 Ahri Mage AP Mid
 Akali Assassin AD Mid
+ahri Mage AP Mid
+Akali Assassin AD Mid
+Annie Mage AD Bot
