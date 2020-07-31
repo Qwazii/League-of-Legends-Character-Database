@@ -2,19 +2,27 @@
 #include <fstream>  
 #include <string>
 
+void intro();
+void menu();
 void input();
 bool isDatabase();
 void search();
 
 int main() {
-  input();
+  intro();
+  //input();
   /* functions needed:
-  1. input function - allows user to input character and attributes , saves info to database
+  1. DONE input function - allows user to input character and attributes , saves info to database
     - function to load database file
     - if no database , create fresh one
     - now handoff to input function
+    DONE
 
-  2. search function - allows user to search by name or attributes (or all?)
+  2. search function - allows user to search by name or attributes (or all?) , then displays the full info of the character
+  3. delete character function - allows user to delete a Legend from the database by entering the Legend's name
+  4. edit character function - allows user to edit a Legend's attributes by entering the Legend's name
+  5. print database function - allows user to print out the entire database
+  6. Legend build function - user input's Legend name, opens browser and presents build guides from mobafire.com
   */
 
   /*
@@ -24,9 +32,29 @@ int main() {
   return 0;
 }
 
+void intro(){
+  std::cout << "Welcome to League of Legends Legend Database (by Nitin K and Kevin C). \nOptions: \n1. Input Legend \n2. Search for a Legend \n3. Edit a Legend \n4. Delete a Legend \n5. Legend Builds via Mobafire.com \n6. Show entire database" << std::endl;
+  menu(); 
+}
+
+void menu(){
+  int i;
+  std::cin >> i;
+  switch(i){
+    case 1:{
+      input();
+      break;
+    }
+    default:{
+      std::cout << "Invalid entry." << std::endl;
+      menu();
+    }
+  }
+}
+
 void input() {
   if (isDatabase() == false) {
-    std::cout << "An error has occured with finding or creating the database. Exiting now.";
+    std::cout << "A fatal error has occured with finding or creating the database. Exiting now.";
     return;
   }
 
@@ -43,35 +71,35 @@ void input() {
       }
       case 1: {
         int i;
-        std::cout << "Role ( 0: Assassin, 1: Fighter, 2: Mage, 3: Marksman, 4: Support, 5: Tank): ";
+        std::cout << "Role ( 1: Assassin, 2: Fighter, 3: Mage, 4: Marksman, 5: Support, 6: Tank): ";
         std::cin >> i; 
-       switch(i) {
-           case 0: {
+        switch(i) {
+           case 1: {
             std::string Input = "Assassin";
             Legend += " " + Input;
             break;
            }
-           case 1: {
+           case 2: {
             std::string Input = "Fighter";
             Legend += " " + Input;
             break;
            }
-           case 2: {
+           case 3: {
             std::string Input = "Mage";
             Legend += " " + Input;
             break;
            }
-           case 3: {
+           case 4: {
             std::string Input = "Marksman";
             Legend += " " + Input;
             break;
            }
-           case 4: {
+           case 5: {
             std::string Input = "Support";
             Legend += " " + Input;
             break;
            }
-           case 5: {
+           case 6: {
             std::string Input = "Tank";
             Legend += " " + Input;
             break;
@@ -82,43 +110,43 @@ void input() {
       }
       case 2: {
         int i;
-        std::cout << "Damage Type (0: AD, 1: AP): ";
+        std::cout << "Damage Type (1: AD, 2: AP): ";
         std::cin >> i;
         switch(i) {
-           case 0: {
+           case 1: {
             std::string Input = "AD";
             Legend += " " + Input;
             break;
            }
-           case 1: {
+           case 2: {
             std::string Input = "AP";
             Legend += " " + Input;
             break;
            }
         x++;
-      }
+        }
       }
       case 3: {
         int i;
-        std::cout<<"Lane (0: Top, 1: Jungle, 2: Mid, 3: Bot): ";
+        std::cout<<"Lane (1: Top, 2: Jungle, 3: Mid, 4: Bot): ";
         std::cin >> i;
          switch(i) {
-           case 0: {
+           case 1: {
             std::string Input = "Top";
             Legend += " " + Input;
             break;
            }
-           case 1: {
+           case 2: {
             std::string Input = "Jungle";
             Legend += " " + Input;
             break;
            }
-           case 2: {
+           case 3: {
             std::string Input = "Mid";
             Legend += " " + Input;
             break;
            }
-           case 3: {
+           case 4: {
             std::string Input = "Bot";
             Legend += " " + Input;
             break;
