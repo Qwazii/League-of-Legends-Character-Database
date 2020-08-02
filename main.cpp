@@ -33,21 +33,44 @@ int main() {
 }
 
 void intro(){
-  std::cout << "Welcome to League of Legends Legend Database (by Nitin K and Kevin C). \nOptions: \n1. Input Legend \n2. Search for a Legend \n3. Edit a Legend \n4. Delete a Legend \n5. Legend Builds via Mobafire.com \n6. Show entire database" << std::endl;
+  std::cout << "Welcome to League of Legends Legend Database (by Nitin K and Kevin C)." << std::endl;
   menu(); 
 }
 
 void menu(){
+  std::cout << "Options: \n1. Input Legend \n2. Search for a Legend \n3. Edit a Legend \n4. Delete a Legend \n5. Legend Builds via Mobafire.com \n6. Show entire database \n7. Delete entire database \n0. Exit program" << std::endl;
   int i;
   std::cin >> i;
   switch(i){
-    case 1:{
+    case 0:{ // Exit program
+      std::cout << "Program exited." << std::endl;
+      return;
+    }
+    case 1:{ // Input Legend
       input();
+      menu();
+      break;
+    }
+    case 2:{ // Search for a Legend
+
+      break;
+    }
+    case 3:{ // Edit a Legend
+      break;
+    }
+    case 4:{ // Delete a Legend
+      break;
+    }
+    case 5:{ // Legend Builds via Mobafire
+      break;
+    }
+    case 6:{ // Show entire database
       break;
     }
     default:{
       std::cout << "Invalid entry." << std::endl;
       menu();
+      break;
     }
   }
 }
